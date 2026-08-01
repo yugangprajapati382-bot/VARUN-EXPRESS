@@ -1658,7 +1658,7 @@ function ContactPage() {
       alert("Please fill Name, Email, and Message.");
       return;
     }
-    const targetNumber = "+919876543210";
+    const targetNumber = "+919033230392";
     const body = `Inquiry - Varun Express\nName: ${form.name}\nPhone: ${form.phone || "N/A"}\nEmail: ${form.email}\nTopic: ${form.topic || "General"}\nMessage: ${form.msg}`;
     window.location.href = `sms:${targetNumber}?body=${encodeURIComponent(body)}`;
     setSent(true);
@@ -1685,7 +1685,7 @@ function ContactPage() {
         <div className="contact-info-col">
           {[
             ["📍", "Our Store", "Shop No. 12, Varun Complex\nS.G. Highway, Ahmedabad\nGujarat — 380054"],
-            ["📞", "Call / SMS", "+91 98765 43210\nMon–Sat, 9 AM – 8 PM"],
+            ["📞", "Call / SMS", "+91 90332 30392\nMon–Sat, 9 AM – 8 PM"],
             ["📧", "Email", "support@varunexpress.in"],
             ["🕒", "Business Hours", "Monday to Saturday\n9:00 AM – 8:00 PM IST"],
           ].map(([icon, title, val]) => (
@@ -1830,7 +1830,8 @@ export default function App() {
   const checkout = () => {
     if (!cart.length) return;
     const body = `Order - Varun Express\n` + cart.map(i => `- ${i.name} (x${i.qty}): ₹${(i.price * i.qty).toLocaleString("en-IN")}`).join("\n") + `\nTotal: ₹${cart.reduce((a, c) => a + c.price * c.qty, 0).toLocaleString("en-IN")}`;
-    window.location.href = `sms:+919876543210?body=${encodeURIComponent(body)}`;
+    window.location.href = `sms:+919033230392
+    ?body=${encodeURIComponent(body)}`;
   };
 
   const cartCount = cart.reduce((a, c) => a + c.qty, 0);
